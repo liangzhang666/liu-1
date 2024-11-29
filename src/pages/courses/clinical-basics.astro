@@ -1,0 +1,59 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const chapters = [
+  {
+    title: '第一章：麻醉基础理论',
+    topics: [
+      '麻醉的定义与发展历史',
+      '麻醉的生理学基础',
+      '麻醉前评估与准备'
+    ]
+  },
+  {
+    title: '第二章：麻醉设备与监测',
+    topics: [
+      '麻醉机的构造与使用',
+      '基本监测设备介绍',
+      '常见并发症的监测与处理'
+    ]
+  },
+  {
+    title: '第三章：麻醉实践',
+    topics: [
+      '麻醉的诱导与维持',
+      '气道管理技术',
+      '麻醉苏醒与术后管理'
+    ]
+  }
+];
+---
+
+<Layout title="临床麻醉基础 - 麻醉专业教学课程">
+  <div class="container mx-auto px-4 py-12">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-3xl font-bold mb-8">临床麻醉基础</h1>
+      
+      <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+        <h2 class="text-xl font-semibold mb-4">课程简介</h2>
+        <p class="text-gray-600 mb-4">
+          本课程为麻醉专业的基础课程，旨在帮助学习者掌握麻醉学的基本理论知识和实践技能。
+          通过系统的学习，学员将了解麻醉的原理、技术和安全管理等核心内容。
+        </p>
+      </div>
+
+      <div class="space-y-8">
+        {chapters.map(chapter => (
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-semibold mb-4">{chapter.title}</h3>
+            <ul class="list-disc list-inside space-y-2 text-gray-600">
+              {chapter.topics.map(topic => (
+                <li>{topic}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</Layout>

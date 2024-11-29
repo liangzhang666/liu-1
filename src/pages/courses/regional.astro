@@ -1,0 +1,59 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const chapters = [
+  {
+    title: '第一章：区域麻醉概述',
+    topics: [
+      '区域麻醉的优势与适应症',
+      '局部麻醉药的药理学',
+      '解剖学基础'
+    ]
+  },
+  {
+    title: '第二章：脊椎麻醉',
+    topics: [
+      '脊椎麻醉的技术要点',
+      '适应症与禁忌症',
+      '并发症的预防与处理'
+    ]
+  },
+  {
+    title: '第三章：硬膜外麻醉',
+    topics: [
+      '硬膜外麻醉的操作技术',
+      '药物选择与剂量计算',
+      '术中监测与管理'
+    ]
+  }
+];
+---
+
+<Layout title="区域麻醉技术 - 麻醉专业教学课程">
+  <div class="container mx-auto px-4 py-12">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-3xl font-bold mb-8">区域麻醉技术</h1>
+      
+      <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+        <h2 class="text-xl font-semibold mb-4">课程简介</h2>
+        <p class="text-gray-600 mb-4">
+          本课程深入讲解各种区域麻醉技术，包括脊椎麻醉、硬膜外麻醉等。
+          通过理论学习和实践操作，培养学员掌握区域麻醉的核心技能。
+        </p>
+      </div>
+
+      <div class="space-y-8">
+        {chapters.map(chapter => (
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-semibold mb-4">{chapter.title}</h3>
+            <ul class="list-disc list-inside space-y-2 text-gray-600">
+              {chapter.topics.map(topic => (
+                <li>{topic}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</Layout>

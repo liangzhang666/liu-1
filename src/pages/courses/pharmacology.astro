@@ -1,0 +1,59 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const chapters = [
+  {
+    title: '第一章：麻醉药物基础',
+    topics: [
+      '药物代谢与药动学',
+      '受体理论',
+      '药物相互作用'
+    ]
+  },
+  {
+    title: '第二章：吸入麻醉药',
+    topics: [
+      '七氟烷的特点与应用',
+      '异氟烷的临床使用',
+      '其他常用吸入麻醉药'
+    ]
+  },
+  {
+    title: '第三章：静脉麻醉药',
+    topics: [
+      '丙泊酚的临床应用',
+      '阿片类药物的选择',
+      '肌松药的合理使用'
+    ]
+  }
+];
+---
+
+<Layout title="麻醉药理学 - 麻醉专业教学课程">
+  <div class="container mx-auto px-4 py-12">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-3xl font-bold mb-8">麻醉药理学</h1>
+      
+      <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+        <h2 class="text-xl font-semibold mb-4">课程简介</h2>
+        <p class="text-gray-600 mb-4">
+          本课程系统介绍麻醉药物的药理学知识，包括药物代谢、作用机制和临床应用。
+          帮助学员深入理解各类麻醉药物的特点，为临床用药提供理论基础。
+        </p>
+      </div>
+
+      <div class="space-y-8">
+        {chapters.map(chapter => (
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-semibold mb-4">{chapter.title}</h3>
+            <ul class="list-disc list-inside space-y-2 text-gray-600">
+              {chapter.topics.map(topic => (
+                <li>{topic}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</Layout>

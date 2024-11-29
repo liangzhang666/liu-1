@@ -1,0 +1,53 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CourseCard from '../components/CourseCard.astro';
+
+const featuredCourses = [
+	{
+		title: '临床麻醉基础',
+		description: '掌握麻醉学基本原理和临床实践的核心知识',
+		image: '/images/clinical-basics.jpg',
+		href: '/courses/clinical-basics'
+	},
+	{
+		title: '区域麻醉技术',
+		description: '深入学习各种区域麻醉技术的应用和注意事项',
+		image: '/images/regional.jpg',
+		href: '/courses/regional'
+	},
+	{
+		title: '麻醉药理学',
+		description: '详细探讨麻醉药物的作用机制和临床应用',
+		image: '/images/pharmacology.jpg',
+		href: '/courses/pharmacology'
+	}
+];
+---
+
+<Layout title="麻醉专业教学课程">
+	<div class="container mx-auto px-4 py-12">
+		<section class="text-center mb-16">
+			<h1 class="text-4xl font-bold mb-4">欢迎来到麻醉专业教学平台</h1>
+			<p class="text-xl text-gray-600 max-w-2xl mx-auto">
+				提供专业、系统的麻醉学教育，助力医学生和专业人士提升临床技能
+			</p>
+		</section>
+
+		<section class="mb-16">
+			<h2 class="text-2xl font-bold mb-8">精选课程</h2>
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				{featuredCourses.map(course => (
+					<CourseCard {...course} />
+				))}
+			</div>
+		</section>
+
+		<section class="bg-gray-50 p-8 rounded-lg">
+			<h2 class="text-2xl font-bold mb-4">关于我们</h2>
+			<p class="text-gray-600">
+				本教学平台由刘博海教授创建，致力于为医学生和专业人士提供高质量的麻醉学教育资源。
+				我们的课程涵盖临床实践、理论知识和最新研究进展，帮助学习者全面提升专业素养。
+			</p>
+		</section>
+	</div>
+</Layout>
